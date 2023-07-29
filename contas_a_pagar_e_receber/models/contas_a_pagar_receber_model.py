@@ -14,4 +14,4 @@ class ContaPagarReceber(Base):
 
 #
 # https://www.youtube.com/watch?v=1n9pidw3XO0
-# 17:20
+# 23 minutos

@@ -1,8 +1,11 @@
 from decimal import Decimal
 from typing import List
 
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 from pydantic import BaseModel
+from sqlalchemy.orm import Session
+
+from shared.dependecies import get_db
 
 router = APIRouter(prefix="/contas-a-pagar-e-receber")
 
@@ -39,7 +42,7 @@ def listar_contas():
 
 
 @router.post("", response_model=ContaPagarReceberResponse, status_code=201)
-def criar_conta(conta: ContaPagarReceberRequest):
+def criar_conta(conta: ContaPagarReceberRequest, db: Session = Depends(get_db)) -> ContaPagarReceberResponse:
     return ContaPagarReceberResponse(
         id=3,
         descricao=conta.descricao,
