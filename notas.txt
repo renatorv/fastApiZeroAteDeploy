@@ -1,0 +1,9 @@
+pip install fastapi
+pip install "uvicorn[standard]"
+pip freeze => ver versões dos pacotes instalados
+
+
+
+Atalhos:
+CTRL + O => otimiza imports
+CTRL + L => formata o código
