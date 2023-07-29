@@ -3,6 +3,9 @@ pip install "uvicorn[standard]"
 pip install pytest
 pip install requests
 pip install install httpx
+pip install sqlalchemy
+pip install psycopg2
+
 pip freeze => ver versões dos pacotes instalados
 pip install -r requirements.txt
 
@@ -15,3 +18,6 @@ CTRL + L => formata o código
 
 Realizar testes:
 python -m pytest
+
+Criação BD Postgres
+docker run --name db_fastapi_zero_ate_deploy -p 5432:5432 -e POSTGRES_DB=db_fastapi_zero_ate_deploy -e POSTGRES_PASSWORD=159753 -d postgres

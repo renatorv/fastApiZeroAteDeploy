@@ -9,13 +9,13 @@ router = APIRouter(prefix="/contas-a-pagar-e-receber")
 
 class ContaPagarReceberResponse(BaseModel):
     id: int
-    description: str
+    descricao: str
     valor: Decimal
     tipo: str  # PAGAR, RECEBER
 
 
 class ContaPagarReceberRequest(BaseModel):
-    description: str
+    descricao: str
     valor: Decimal
     tipo: str  # PAGAR, RECEBER
 
@@ -25,13 +25,13 @@ def listar_contas():
     return [
         ContaPagarReceberResponse(
             id=1,
-            description="Aluguel",
+            descricao="Aluguel",
             valor=1000.50,
             tipo="PAGAR"
         ),
         ContaPagarReceberResponse(
             id=2,
-            description="Salário",
+            descricao="Salário",
             valor=5000,
             tipo="RECEBER"
         ),
@@ -42,7 +42,7 @@ def listar_contas():
 def criar_conta(conta: ContaPagarReceberRequest):
     return ContaPagarReceberResponse(
         id=3,
-        description=conta.description,
+        descricao=conta.descricao,
         valor=conta.valor,
         tipo=conta.tipo
     )
