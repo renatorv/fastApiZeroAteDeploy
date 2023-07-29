@@ -1,9 +1,17 @@
 pip install fastapi
 pip install "uvicorn[standard]"
+pip install pytest
+pip install requests
+pip install install httpx
 pip freeze => ver versões dos pacotes instalados
+pip install -r requirements.txt
 
 
 
 Atalhos:
 CTRL + O => otimiza imports
 CTRL + L => formata o código
+
+
+Realizar testes:
+python -m pytest
