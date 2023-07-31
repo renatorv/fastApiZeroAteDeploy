@@ -40,5 +40,8 @@ python -m pytest
 Criação BD Postgres
 docker run --name db_fastapi_zero_ate_deploy -p 5432:5432 -e POSTGRES_DB=db_fastapi_zero_ate_deploy -e POSTGRES_PASSWORD=159753 -d postgres
 
+# Guia Gratis de APIs
+https://github.com/NationalBankBelgium/REST-API-Design-Guide/wiki
+
 # Próxima
 https://www.youtube.com/watch?v=pYOhMcmzpuM
