@@ -5,10 +5,28 @@ pip install requests
 pip install install httpx
 pip install sqlalchemy
 pip install psycopg2
+pip install alembic
 
 pip freeze => ver versões dos pacotes instalados
 pip install -r requirements.txt
 
+Alembic
+alembic init alembic
+
+D:\DEV\PYTHON\PESSOAL\FastAiZeroAteDeploy\alembic.ini
+sqlalchemy.url = postgresql://postgres:159753@localhost/db_fastapi_zero_ate_deploy
+
+D:\DEV\PYTHON\PESSOAL\FastAiZeroAteDeploy\alembic\env.py
+from shared.database import Base
+target_metadata = Base.metadata
+
+alembic revision --autogenerate -m "Cria tabela de contas a pagar e receber."
+
+Aplicar a migração do alembic:
+alembic upgrade head
+
+# Caso precise de um rollback
+alembic downgrade -1
 
 
 Atalhos:
@@ -21,3 +39,6 @@ python -m pytest
 
 Criação BD Postgres
 docker run --name db_fastapi_zero_ate_deploy -p 5432:5432 -e POSTGRES_DB=db_fastapi_zero_ate_deploy -e POSTGRES_PASSWORD=159753 -d postgres
+
+# Próxima
+https://www.youtube.com/watch?v=pYOhMcmzpuM
