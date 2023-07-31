@@ -10,8 +10,3 @@ class ContaPagarReceber(Base):
     descricao = Column(String(30))
     valor = Column(Numeric)
     tipo = Column(String(30))
-
-
-#
-# https://www.youtube.com/watch?v=1n9pidw3XO0
-# 23 minutos

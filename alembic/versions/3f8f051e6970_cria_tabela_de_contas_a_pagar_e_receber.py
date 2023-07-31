@@ -18,7 +18,7 @@ depends_on = None
 def upgrade() -> None:
     op.create_table('conta_pagar_receber',
                     sa.Column('id', sa.Integer(), autoincrement=True, nullable=False),
-                    sa.Column('descricao', sa.String(length=100), nullable=True),
+                    sa.Column('descricao', sa.String(length=30), nullable=True),
                     sa.Column('valor', sa.Numeric(), nullable=True),
                     sa.Column('tipo', sa.String(length=30), nullable=True),
                     sa.PrimaryKeyConstraint('id')
