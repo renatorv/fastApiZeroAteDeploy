@@ -43,5 +43,8 @@ docker run --name db_fastapi_zero_ate_deploy -p 5432:5432 -e POSTGRES_DB=db_fast
 # Guia Gratis de APIs
 https://github.com/NationalBankBelgium/REST-API-Design-Guide/wiki
 
+# Problema de import circular, comentado na aula 07 - Gerenciamento de Exceções
+por voltar dos 14 minutos
+
 # Próxima
 https://www.youtube.com/watch?v=pYOhMcmzpuM

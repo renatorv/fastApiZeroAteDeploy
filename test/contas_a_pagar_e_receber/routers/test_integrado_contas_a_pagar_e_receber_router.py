@@ -173,3 +173,32 @@ def test_deve_remover_conta_a_pagar_e_receber():
 #     assert response_get.json()["valor"] == "333.0000000000"
 #     assert response_get.json()["tipo"] == "PAGAR"
 #     assert response_get.json()["descricao"] == "Curso de Python2"
+
+def test_deve_retornar_noa_encontrado_para_id_nao_existente():
+    Base.metadata.drop_all(bind=engine)
+    Base.metadata.create_all(bind=engine)
+
+    response = client.get("/contas-a-pagar-e-receber/100")
+
+    assert response.status_code == 404
+
+def test_deve_retornar_noa_encontrado_para_id_nao_existente_atualizacao():
+    Base.metadata.drop_all(bind=engine)
+    Base.metadata.create_all(bind=engine)
+
+    response = client.put(f"/contas-a-pagar-e-receber/100", json={
+        "descricao": "Curso de Python2",
+        "valor": 111,
+        "tipo": "PAGAR"
+    })
+
+    assert response.status_code == 404
+
+
+def test_deve_retornar_noa_encontrado_para_id_nao_existente_exclusao():
+    Base.metadata.drop_all(bind=engine)
+    Base.metadata.create_all(bind=engine)
+
+    response = client.delete(f"/contas-a-pagar-e-receber/100")
+
+    assert response.status_code == 404
